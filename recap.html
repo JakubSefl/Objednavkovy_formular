@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="">
+    <title>Rekapitulace</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Rekapitulace</h1>
+        <p>Jméno a příjmení: <span id="recapFullName"></span></p>
+        <p>E-mail: <span id="recapEmail"></span></p>
+        <p>Produkt: <span id="recapProduct"></span></p>
+        <p>Počet kusů: <span id="recapQuantity"></span></p>
+        <p>Celková cena (CZK): <span id="recapTotalPriceCZK"></span></p>
+        <p>Celková cena (EUR): <span id="recapTotalPriceEUR"></span></p>
+        <br>
+        <a class="imput" href="index.html">Zpět</a>
+
+    </div>
+
+    <script>
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        window.onload = function () {
+            const fullName = getUrlParameter('fullName');
+            const email = getUrlParameter('email');
+            const product = getUrlParameter('product');
+            const quantity = getUrlParameter('quantity');
+            const totalPriceCZK = getUrlParameter('totalPriceCZK');
+            const totalPriceEUR = getUrlParameter('totalPriceEUR');
+
+            document.getElementById('recapFullName').textContent = fullName;
+            document.getElementById('recapEmail').textContent = email;
+            document.getElementById('recapProduct').textContent = product;
+            document.getElementById('recapQuantity').textContent = quantity;
+            document.getElementById('recapTotalPriceCZK').textContent = totalPriceCZK;
+            document.getElementById('recapTotalPriceEUR').textContent = totalPriceEUR;
+        };
+    </script>
+</body>
+</html>
